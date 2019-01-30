@@ -51,7 +51,8 @@ public class MainGameLoop {
 		
 		UIMaster.init(loader);
 		//UIMaster.loadUI(new UIElement(new Vector2f(0,0), new Vector2f(1f, 1f), "Escape Menu"));
-		
+		//Test för github
+		System.out.println("x");
 		TextMaster.init(loader);
 		
 		

@@ -5,6 +5,7 @@
 /Map.psd
 /Map2.png
 /Sprites/
+<<<<<<< HEAD
 /fontRendering/
 /shaders/
 /ui/
@@ -24,3 +25,24 @@
 /spritesheet.psd
 /textures/
 /toolbox/
+=======
+/blocks/
+/cube.obj
+/engineTester/
+/entities/
+/fontMeshCreator/
+/fontRendering/
+/input/
+/map.png
+/map/
+/models/
+/plane.obj
+/plane2.obj
+/renderEngine/
+/shaders/
+/spritesheet.png
+/spritesheet.psd
+/textures/
+/toolbox/
+/ui/
+>>>>>>> branch 'master' of https://github.com/Kireei/Colony.git
