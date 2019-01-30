@@ -1,41 +1,27 @@
 package engineTester;
 
 
-import java.awt.Font;
-import java.awt.Graphics;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.lwjgl.opengl.Display;
-import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
-import org.newdawn.slick.TrueTypeFont;
-
 import entities.Camera;
 
 import entities.NPC;
-import fontMeshCreator.FontType;
-import fontMeshCreator.GUIText;
 import fontRendering.TextMaster;
 import input.MouseController;
 import entities.Character;
-import entities.Entity;
 import entities.Light;
 import map.Image;
 import map.Map;
 import map.MapInteraction;
 import map.Tiles;
-import models.RawModel;
-import models.TexturedModel;
 import renderEngine.DisplayManager;
 import renderEngine.Loader;
-import renderEngine.OBJLoader;
 import renderEngine.Renderer;
 import shaders.StaticShader;
-import textures.ModelTexture;
-import ui.UIElement;
 import ui.UIHandler;
 import ui.UIMaster;
 

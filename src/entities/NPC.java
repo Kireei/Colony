@@ -6,7 +6,6 @@ import models.RawModel;
 import models.TexturedModel;
 import renderEngine.Loader;
 import renderEngine.OBJLoader;
-import renderEngine.Renderer;
 import textures.ModelTexture;
 
 public class NPC {

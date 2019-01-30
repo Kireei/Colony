@@ -1,25 +1,14 @@
 package ui;
 
-import java.awt.Font;
-
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.TrueTypeFont;
-
-import entities.Camera;
 import entities.Entity;
 import fontMeshCreator.GUIText;
-import fontRendering.FontRenderer;
-import fontRendering.TextMaster;
 import models.RawModel;
 import models.TexturedModel;
 import renderEngine.Loader;
-import renderEngine.OBJLoader;
-import renderEngine.Renderer;
-import shaders.StaticShader;
 import textures.ModelTexture;
 
 public class Button {
