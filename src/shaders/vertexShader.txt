@@ -1,0 +1,33 @@
+#version 400 core
+
+in vec3 position;
+in vec2 textureCoords;
+
+const int maxLights = 30;
+
+out vec2 pass_textureCoords;
+out vec3[maxLights] pass_lightPos;
+out vec4 pass_worldCoords;
+out int pass_maxLights;
+
+uniform mat4 tMatrix;
+uniform mat4 vMatrix;
+uniform mat4 pMatrix;
+uniform vec3[maxLights] lightPos;
+
+
+
+
+void main(void){
+	vec4 worldPosition = tMatrix * vec4(position, 1.0);
+	gl_Position = pMatrix *  vMatrix * worldPosition;
+	for(int i = 0; i < maxLights; i++){
+		pass_lightPos[i] = lightPos[i];
+		pass_worldCoords = worldPosition;
+
+	}
+	pass_textureCoords = textureCoords;
+
+	
+
+}

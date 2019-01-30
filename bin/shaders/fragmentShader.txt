@@ -1,0 +1,38 @@
+#version 400 core
+
+
+const int maxLights = 30;
+
+in vec2 pass_textureCoords;
+
+in vec3[maxLights] pass_lightPos;
+in vec4 pass_worldCoords;
+
+
+out vec4 out_Color;
+
+uniform sampler2D sampler;
+uniform vec4 enviromentalLighting;
+uniform vec3[maxLights] lightColor;
+uniform float[maxLights] lightPower;
+
+
+void main(void){
+	vec4 textures = texture(sampler, pass_textureCoords);
+	vec4 totalLight;
+	
+	for(int i = 0; i < maxLights; i++){
+		vec3 vectorDistance = pass_worldCoords.xyz - pass_lightPos[i];
+		float distance = sqrt(vectorDistance.x * vectorDistance.x + vectorDistance.y * vectorDistance.y + vectorDistance.z * vectorDistance.z);
+		totalLight += vec4((lightColor[i] * lightPower[i] * lightPower[i] / (distance * distance)), 1.0);
+		
+	}
+	vec4 finalLightFactor = totalLight + enviromentalLighting;
+	if(textures.a == 0.0){
+		discard;
+	}
+	
+	
+
+	out_Color = ((finalLightFactor) * textures);
+}
