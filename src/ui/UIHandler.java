@@ -65,6 +65,18 @@ public class UIHandler {
 			}
 			for(Icon i : inventory.getIcons()){
 				i.checkClick();
+				if(i.isClicked()) {
+					switch(i.getId()) {
+					case "inventoryIconWater":
+						System.out.println("Water");
+						break;
+					case "inventoryIconSand":
+						System.out.println("Sand");
+						break;
+					default:
+						System.out.println("Something else");
+					}
+				}
 			}
 		}
 		if(Keyboard.isKeyDown(Keyboard.KEY_ESCAPE) && !isEscapeMenu){
