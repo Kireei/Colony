@@ -7,14 +7,12 @@ import java.util.List;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 
-import blocks.Block;
 import blocks.WoodenWall;
 import entities.Entity;
 import models.RawModel;
 import models.TexturedModel;
 import renderEngine.Loader;
 import renderEngine.OBJLoader;
-import renderEngine.Renderer;
 import textures.ModelTexture;
 
 public class Tiles {

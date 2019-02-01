@@ -18,20 +18,18 @@ public class Icon {
 	private Entity en;
 	private Vector4f color;
 
-	private Vector2f position;
+	private Vector3f position;
 	private Vector2f scale;
-	private String image;
 	private String id;
 	
 	private boolean clicked = false;
 	
-	public Icon(Vector2f position, Vector2f scale, String image, String id){
-		this.position = position;
+	public Icon(Vector3f iconPosition, Vector2f scale, String image, String id){
+		this.position = iconPosition;
 		this.scale = scale;
-		this.image = image;
 		this.id = id;
 		this.texModel = new TexturedModel(this.rawModel, new ModelTexture(UIHandler.loader.loadTexture(image)));
-		this.en = new Entity(this.texModel, new Vector3f(position.x, position.y, 1), 0,0,0, new Vector3f(scale.x, scale.y, 1));
+		this.en = new Entity(this.texModel, new Vector3f(iconPosition.x, iconPosition.y, 1), 0,0,0, new Vector3f(scale.x, scale.y, 1));
 		this.color = new Vector4f(1,1,1,0.0f);
 	}
 	
@@ -44,7 +42,7 @@ public class Icon {
 		if(Mouse.isButtonDown(0) && mX >= this.position.x - (scaleX * 0.5626) && mX <= this.position.x + (scaleX * 0.5626) && mY >= this.position.y - scaleY && mY <= this.position.y + scaleY){
 			this.color = new Vector4f(1,1,1,0.5f);
 			clicked = true;
-		} else if(mX >= this.position.x - (scaleX * 0.5626) && mX <= this.position.x + (scaleX * 0.5626) && mY >= this.position.y - scaleY && mY <= this.position.y + scaleY){
+		} else if(Mouse.isButtonDown(0) && mX >= this.position.x - (scaleX * 0.5626) && mX <= this.position.x + (scaleX * 0.5626) && mY >= this.position.y - scaleY && mY <= this.position.y + scaleY){
 			this.color = new Vector4f(1,1,1,0.35f);
 		} else{
 			clicked = false;
@@ -77,11 +75,11 @@ public class Icon {
 		this.en = en;
 	}
 
-	public Vector2f getPosition() {
+	public Vector3f getPosition() {
 		return position;
 	}
 
-	public void setPosition(Vector2f position) {
+	public void setPosition(Vector3f position) {
 		this.position = position;
 	}
 

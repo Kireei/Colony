@@ -19,11 +19,10 @@ public class MapTile {
 	
 	
 	public MapTile(Biomes biome){
-		OBJLoader objloader = new OBJLoader();
 		Loader loader = new Loader();
 		
 		
-		RawModel model = objloader.loadObjModel("plane2", loader);
+		RawModel model = OBJLoader.loadObjModel("plane2", loader);
 		switch(biome){
 		case OCEAN:
 			this.texture = new ModelTexture(loader.loadTexture("sprites/Water"));

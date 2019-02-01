@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.lwjgl.util.vector.Vector2f;
 
-import blocks.Block;
 import entities.Entity;
 import models.TexturedModel;
 import renderEngine.Renderer;

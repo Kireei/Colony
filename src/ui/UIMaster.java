@@ -5,19 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import renderEngine.Loader;
-
 public class UIMaster {
-	private static Loader loader;
 	public static List<UIElement> ui = new ArrayList<UIElement>();
 	public static List<Button> buttons = new ArrayList<Button>();
 	public static Map<UIElement, List<Button>> uis = new HashMap<UIElement, List<Button>>();
-	private static UIRenderer renderer;
-	
-	public static void init(Loader theLoader){
-		renderer = new UIRenderer();
-		loader = theLoader;
-	}
 	
 	public static void loadUI(UIElement uie){
 		ui.add(uie);
@@ -35,10 +26,10 @@ public class UIMaster {
 	}
 	
 	public static void render(){
-		renderer.render(uis);
+		UIRenderer.render(uis);
 	}
 	public static void cleanUp(){
-		renderer.cleanUp();
+		UIRenderer.cleanUp();
 	}
 	
 	

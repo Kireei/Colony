@@ -16,35 +16,34 @@ import textures.ModelTexture;
 public class UIElement {
 	private List<Button> buttons = new ArrayList<Button>();
 	private List<Icon> icons = new ArrayList<Icon>();
-	private Vector2f position;
+	private Vector3f position;
 	private Vector2f scale;
 	private RawModel rawModel = UIHandler.rawModel;
 	private Loader loader = UIHandler.loader;
 	private TexturedModel texModel;
 	private Entity en;
-	private int vao;
 	
 	private boolean toggled = false;
 	
-	public UIElement(Vector2f position, Vector2f scale, String path){
+	public UIElement(Vector3f position, Vector2f scale, String path){
 		this.position = position;
 		this.scale = scale;
 		this.texModel = new TexturedModel(this.rawModel, new ModelTexture(this.loader.loadTexture("GUI/" + path)));
-		this.en = new Entity(texModel, new Vector3f(position.x, position.y, 1), 0,0,10, new Vector3f(scale.x, scale.y, 1));
+		this.en = new Entity(texModel, new Vector3f(position.x, position.y, position.z), 0,0,10, new Vector3f(scale.x, scale.y, 1));
 	}
 	
 	public void addButton(Vector2f position, float scale, String title, Vector2f textPosition){
-		Vector2f buttonPos = new Vector2f();
-		Vector2f.add(this.position, position, buttonPos);
-		Vector2f textPos = new Vector2f();
-		Vector2f.add(buttonPos, textPosition, textPos);
+		Vector3f buttonPos = new Vector3f();
+		Vector3f.add(this.position, new Vector3f(position.x, position.y, 1), buttonPos);
+		Vector3f textPos = new Vector3f();
+		Vector3f.add(buttonPos, new Vector3f(textPosition.x, textPosition.y, 1), textPos);
 		
 		buttons.add(new Button(this, buttonPos, scale, title, buttonPos));
 	}
 	
 	public void addIcon(Vector2f position, Vector2f scale, String image, String id){
-		Vector2f iconPosition = new Vector2f();
-		Vector2f.add(this.position, position, iconPosition);
+		Vector3f iconPosition = new Vector3f();
+		Vector3f.add(this.position, new Vector3f(position.x, position.y, 1), iconPosition);
 		
 		icons.add(new Icon(iconPosition, scale, image, id));
 		
@@ -73,7 +72,7 @@ public class UIElement {
 		this.en = en;
 	}
 
-	public Vector2f getPosition() {
+	public Vector3f getPosition() {
 		return position;
 	}
 

@@ -3,9 +3,7 @@ package ui;
 import java.util.List;
 import java.util.Map;
 
-import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
@@ -14,14 +12,11 @@ import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
 
-import entities.Entity;
 import models.RawModel;
 import models.TexturedModel;
-import renderEngine.Renderer;
 import toolbox.Maths;
 
 public class UIRenderer {
-	private static Matrix4f pMatrix;
 	private static UIShader shader = new UIShader();
 
 	public static void render(Map<UIElement, List<Button>> elements){
@@ -103,7 +98,7 @@ public class UIRenderer {
 		GL11.glEnable(GL11.GL_BLEND);
 		
     	GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-    	GL11.glDisable(GL11.GL_DEPTH_TEST);
+    	//GL11.glDisable(GL11.GL_DEPTH_TEST);
     	shader.start();
 	}
 

@@ -18,19 +18,18 @@ public class Button {
 	private TexturedModel activeTexModel;
 	private Entity en;
 	private GUIText title;
-	private Vector2f position;
+	private Vector3f position;
 	private Vector2f scale;
 	private boolean clicked = false;
-	private UIElement master;
-	public Button(UIElement master, Vector2f position, float scale, String title, Vector2f textPos){
+	
+	public Button(UIElement master, Vector3f buttonPos, float scale, String title, Vector3f buttonPos2){
 		//this.rawModel = OBJLoader.loadObjModel("plane2",new Loader());
-		this.position = position;
-		this.master = master;
+		this.position = buttonPos;
 		this.scale = new Vector2f((scale),scale);
 		this.activeTexModel = texModel;
 		//his.texModel = new TexturedModel(this.rawModel, new ModelTexture(new Loader().loadTexture("sprites/cube")));
-		this.en = new Entity(Button.clickedTexModel, new Vector3f(position.x, position.y, 1), 0, 0, 0, new Vector3f(this.scale.x, this.scale.y, 1f));
-		this.title = new GUIText(title, 4 * scale , UIHandler.font, new Vector2f(position.x, -position.y-(this.scale.y/8)), 1f, true, false);
+		this.en = new Entity(Button.clickedTexModel, new Vector3f(buttonPos.x, buttonPos.y, 1), 0, 0, 0, new Vector3f(this.scale.x, this.scale.y, 1f));
+		this.title = new GUIText(title, 4 * scale , UIHandler.font, new Vector2f(buttonPos.x, -buttonPos.y-(this.scale.y/8)), 1f, true, false);
 		this.title.setColour(0.8555f,0.7031f,0.1445f);
 	}
 	
@@ -78,7 +77,7 @@ public class Button {
 		return scale;
 	}
 
-	public Vector2f getPosition() {
+	public Vector3f getPosition() {
 		return position;
 	}
 

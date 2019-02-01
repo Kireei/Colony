@@ -195,7 +195,7 @@ public class Map {
 	}
 
 	public void setMapTiles(Entity[] mapTiles) {
-		this.mapTiles = mapTiles;
+		Map.mapTiles = mapTiles;
 	}
 	
 	
