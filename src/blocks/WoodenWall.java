@@ -1,16 +1,11 @@
 package blocks;
 
-import java.util.HashMap;
-
 import org.lwjgl.util.vector.Vector2f;
-import org.lwjgl.util.vector.Vector3f;
 
 import map.Map;
 import map.MapInteraction;
 import map.Tiles;
 import models.TexturedModel;
-import renderEngine.Loader;
-import renderEngine.Renderer;
 import textures.ModelTexture;
 
 public class WoodenWall extends Block{

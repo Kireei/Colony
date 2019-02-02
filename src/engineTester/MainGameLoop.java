@@ -7,17 +7,16 @@ import java.util.List;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
-import entities.Camera;
 
+import entities.Camera;
+import entities.Character;
+import entities.Light;
 import entities.NPC;
 import fontRendering.TextMaster;
 import input.MouseController;
-import entities.Character;
-import entities.Light;
 import map.Image;
 import map.Map;
 import map.MapInteraction;
-import map.Tiles;
 import renderEngine.DisplayManager;
 import renderEngine.Loader;
 import renderEngine.Renderer;
@@ -42,7 +41,6 @@ public class MainGameLoop {
 		StaticShader shader = new StaticShader();
 		Renderer renderer = new Renderer(shader);
 		Camera camera = new Camera();
-		Tiles tiles = new Tiles();
 		Image mapImage = new Image("/Map.png");
 		Character character = new Character(camera);
 		//character.prepareCharacter();

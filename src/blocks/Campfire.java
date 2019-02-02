@@ -12,10 +12,6 @@ import renderEngine.Renderer;
 import textures.ModelTexture;
 
 public class Campfire extends Block{
-	
-	private TexturedModel fire;
-	private Entity enFire;
-	private Entity enCampfire;
 
 	public Campfire(Vector2f tile) {
 		super(tile);
@@ -30,7 +26,7 @@ public class Campfire extends Block{
 		MapInteraction.tilesOnMap[(int) (tile.y * Math.sqrt(Map.getMapTiles().length) + tile.x)] = super.getId();
 		Renderer.lights.add(new Light(Map.getMapTiles()[(int) (tile.y * Math.sqrt(Map.getMapTiles().length) + tile.x)].getPosition(), new Vector3f(1, 0.5f, 0.0f), 7));
 		Renderer.lights.get(Renderer.lights.size() - 1).setPosition(new Vector3f(Map.getMapTiles()[(int) (tile.y * Math.sqrt(Map.getMapTiles().length) + tile.x)].getPosition().x, Map.getMapTiles()[(int) (tile.y * Math.sqrt(Map.getMapTiles().length) + tile.x)].getPosition().y, -1));
-		//Renderer.processEntity(this.enCampfire, Renderer.map);
+
 		
 	}
 
